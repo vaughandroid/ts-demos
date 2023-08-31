@@ -1,17 +1,17 @@
 export interface Success {
-  __type: 'success',
+  kind: 'success',
   data: string
 }
 
 export interface Failure {
-  __type: 'failure',
+  kind: 'failure',
   reason: string
 }
 
 export type Result = Success | Failure;
 
 export function apiCall(): Result {
-  return Math.random() > 0.5 ? {__type: 'success', data: 'I worked'} : {__type: 'failure', reason: 'I failed'};
+  return Math.random() > 0.5 ? {kind: 'success', data: 'I worked'} : {kind: 'failure', reason: 'I failed'};
 }
 
 export function onSuccess(success: Success): string {
@@ -24,6 +24,6 @@ export function onFailure(failure: Failure): string {
   return failure.reason;
 }
 
-export function throwUnsupportedTypeError(result: unknown): never {
-  throw new Error(`Unknown type: ${result}`);
+export function throwUnsupportedTypeError(result: never): never {
+  throw new Error(`Unknown type: ${JSON.stringify(result)}`);
 }

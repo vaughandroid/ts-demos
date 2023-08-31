@@ -1,4 +1,4 @@
-import {apiCall, Failure, onFailure, onSuccess, Success, throwUnsupportedTypeError} from "./core.ts";
+import {apiCall, Failure, onFailure, onSuccess, Success, throwUnsupportedTypeError} from "./core";
 
 function doStuffWithCallbacks() {
   apiCallWithCallbacks(onSuccess, onFailure);
@@ -20,7 +20,7 @@ function apiCallWithCallbacks(
 ) {
   const result = apiCall();
 
-  switch (result.__type) {
+  switch (result.kind) {
     case 'success':
       successCallback(result);
       break;
@@ -32,6 +32,6 @@ function apiCallWithCallbacks(
   }
 }
 
-if (import.meta.main) {
+if (require.main === module) {
   doStuffWithCallbacks();
 }

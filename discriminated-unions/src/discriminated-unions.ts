@@ -1,9 +1,9 @@
-import {apiCall, onFailure, onSuccess, throwUnsupportedTypeError} from "./core.ts";
+import {apiCall, onFailure, onSuccess, throwUnsupportedTypeError} from "./core";
 
 function doStuffWithDiscriminatedUnions(): string {
   const result = apiCall();
 
-  if (result.__type === 'success') {
+  if (result.kind === 'success') {
     return onSuccess(result);
   } else {
     return onFailure(result);
@@ -13,17 +13,18 @@ function doStuffWithDiscriminatedUnions(): string {
 function doStuffWithFallback(): string {
   const result = apiCall();
 
-  switch (result.__type) {
+  switch (result.kind) {
     case 'success':
       return onSuccess(result);
     case 'failure':
       return onFailure(result);
-    default:
-      return throwUnsupportedTypeError(result);
+    default: {
+      throwUnsupportedTypeError(result);
+    }
   }
 }
 
-if (import.meta.main) {
+if (require.main === module) {
   doStuffWithDiscriminatedUnions();
   doStuffWithFallback();
 }

@@ -1,4 +1,4 @@
-import {apiCall, Failure, onFailure, onSuccess, Result, Success, throwUnsupportedTypeError} from "./core.ts";
+import {apiCall, Failure, onFailure, onSuccess, Result, Success, throwUnsupportedTypeError} from "./core";
 
 function doStuffWithTypePredicates(): string {
   const result = apiCall();
@@ -11,7 +11,7 @@ function doStuffWithTypePredicates(): string {
 }
 
 function isSuccessTypePredicate(result: Result): result is Success {
-  return result.__type === 'failure';
+  return result.kind === 'success';
 
   // This is also an option where there isn't a '__type' field we can use.
   // return result.hasOwnProperty('data');
@@ -33,10 +33,10 @@ function doStuffWithTypePredicatesAndFallback(): string {
 }
 
 function isFailureTypePredicate(result: Result): result is Failure {
-  return result.__type === 'failure';
+  return result.kind === 'failure';
 }
 
-if (import.meta.main) {
+if (require.main === module) {
   doStuffWithTypePredicates();
   doStuffWithTypePredicatesAndFallback();
 }
