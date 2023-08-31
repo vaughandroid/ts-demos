@@ -1,4 +1,7 @@
 {
+  "name": "discriminated-unions",
+  "version": "1.0.0",
+  "description": "Demo for using discriminated unions",
   "devDependencies": {
     "@types/node": "^20.5.7"
   }
