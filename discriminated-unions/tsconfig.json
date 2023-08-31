@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "module": "ES2022",
-    "strict": true,
-    "noUnusedParameters": false
+    "strict": true
   }
 }
