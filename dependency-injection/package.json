@@ -1,0 +1,13 @@
+{
+  "name": "dependency-injection",
+  "version": "1.0.0",
+  "description": "Demo for various approaches to dependency injection in TS",
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "ts-node": "^10.9.1"
+  },
+  "scripts": {
+    "class-based": "ts-node src/class-based/run.ts"
+  },
+  "type": "module"
+}
