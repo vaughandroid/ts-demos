@@ -7,7 +7,8 @@
     "ts-node": "^10.9.1"
   },
   "scripts": {
-    "class-based": "ts-node src/class-based/run.ts"
+    "class-based": "ts-node src/class-based/run.ts",
+    "function-based": "ts-node src/class-based/main.ts"
   },
   "type": "module"
 }
