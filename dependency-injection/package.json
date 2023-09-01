@@ -7,9 +7,11 @@
     "ts-node": "^10.9.1"
   },
   "scripts": {
-    "all": "npm run class-based && npm run function-based",
+    "all": "npm run class-based && npm run function-based && npm run class-based-factory-injection && npm run function-based-factory-injection",
     "class-based": "ts-node src/class-based/main.ts",
-    "function-based": "ts-node src/class-based/main.ts"
+    "class-based-factory-injection": "ts-node src/factory-injection/class-based.ts",
+    "function-based": "ts-node src/class-based/main.ts",
+    "function-based-factory-injection": "ts-node src/factory-injection/function-based.ts"
   },
   "type": "module"
 }

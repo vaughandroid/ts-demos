@@ -2,7 +2,7 @@ import {dirname} from "path";
 import {fileURLToPath} from "url";
 import {createLogFn} from "./log.js";
 import {createGetFilesInDirectoryFn} from "./get-files-in-directory.js";
-import {createPrintDirectoryContentsFn} from "./list-directory-contents.js";
+import {createPrintDirectoryContentsFn} from "./print-directory-contents.js";
 
 export async function main(): Promise<void> {
   // Create everything
