@@ -28,3 +28,7 @@ export async function main(factories: Factories = productionFactories): Promise<
   const dirPath = dirname(fileURLToPath(import.meta.url));
   await browser.listDirectoryContents(dirPath);
 }
+
+if (fileURLToPath(import.meta.url) === process.argv[1]) {
+  main();
+}
