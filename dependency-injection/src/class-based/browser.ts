@@ -2,7 +2,7 @@ import {Logger} from "./logger.js";
 import {FileLister} from "./file-lister.js";
 
 export interface Browser {
-  listDirectoryContents(path: string): Promise<void>
+  printDirectoryContents(path: string): Promise<void>
 }
 
 export function createBrowser(logger: Logger, fileLister: FileLister): Browser {
@@ -17,7 +17,7 @@ class BrowserImpl implements Browser {
   ) {
   }
 
-  async listDirectoryContents(path: string): Promise<void> {
+  async printDirectoryContents(path: string): Promise<void> {
     this.logger.log(`${path} contents:`)
     const files = await this.fileLister.getFilesInDirectory(path);
     for (const filename of files) {
