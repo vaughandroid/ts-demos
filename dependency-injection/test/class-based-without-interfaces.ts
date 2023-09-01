@@ -1,8 +1,8 @@
 import 'mocha';
 import {SinonStub, stub, assert} from 'sinon';
-import {Browser, createBrowser} from "../src/class-based-without-interfaces/browser.js";
-import {Logger} from "../src/class-based-without-interfaces/logger.js";
-import {FileLister} from "../src/class-based-without-interfaces/file-lister.js";
+import {Browser, createBrowser} from "../src/class-based/browser.js";
+import {Logger} from "../src/class-based/logger.js";
+import {FileLister} from "../src/class-based/file-lister.js";
 import {createFileLister} from "../src/class-based/file-lister";
 
 describe('Class-based DI without interfaces', () => {

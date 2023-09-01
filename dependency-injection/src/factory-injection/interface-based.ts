@@ -1,7 +1,7 @@
 import {dirname} from "path";
-import {createBrowser} from "../class-based/browser.js";
-import {createFileLister} from "../class-based/file-lister.js";
-import {createLogger} from "../class-based/logger.js";
+import {createBrowser} from "../interface-based/browser.js";
+import {createFileLister} from "../interface-based/file-lister.js";
+import {createLogger} from "../interface-based/logger.js";
 import {fileURLToPath} from "url";
 
 interface Factories {

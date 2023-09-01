@@ -12,12 +12,12 @@
   },
   "scripts": {
     "test": "mocha",
-    "all": "npm run class-based && npm run class-based-without-interfaces && npm run function-based && npm run class-based-factory-injection && npm run function-based-factory-injection",
+    "all": "npm run class-based && npm run function-based && npm run interface-based && npm run function-based-factory-injection && npm run interface-based-factory-injection",
     "class-based": "ts-node src/class-based/main.ts",
-    "class-based-factory-injection": "ts-node src/factory-injection/class-based.ts",
-    "class-based-without-interfaces": "ts-node src/class-based-without-interfaces/main.ts",
-    "function-based": "ts-node src/class-based/main.ts",
-    "function-based-factory-injection": "ts-node src/factory-injection/function-based.ts"
+    "function-based": "ts-node src/function-based/main.ts",
+    "interface-based": "ts-node src/interface-based/main.ts",
+    "function-based-factory-injection": "ts-node src/factory-injection/function-based.ts",
+    "interface-based-factory-injection": "ts-node src/factory-injection/interface-based.ts"
   },
   "type": "module",
   "mocha": {

@@ -1,8 +1,8 @@
 import 'mocha';
 import {SinonStub, stub, assert} from 'sinon';
-import {Browser, createBrowser} from "../src/class-based/browser.js";
-import {Logger} from "../src/class-based/logger.js";
-import {FileLister} from "../src/class-based/file-lister.js";
+import {Browser, createBrowser} from "../src/interface-based/browser.js";
+import {Logger} from "../src/interface-based/logger.js";
+import {FileLister} from "../src/interface-based/file-lister.js";
 
 describe('Class-based DI', () => {
   describe('Browser example test', () => {

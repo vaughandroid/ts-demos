@@ -1,15 +1,11 @@
 import {Logger} from "./logger.js";
 import {FileLister} from "./file-lister.js";
 
-export interface Browser {
-  printDirectoryContents(path: string): Promise<void>
-}
-
 export function createBrowser(logger: Logger, fileLister: FileLister): Browser {
-  return new BrowserImpl(logger, fileLister);
+  return new Browser(logger, fileLister);
 }
 
-class BrowserImpl implements Browser {
+export class Browser {
 
   constructor(
     private readonly logger: Logger,

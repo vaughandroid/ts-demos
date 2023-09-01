@@ -1,17 +1,13 @@
 import * as fs from 'fs';
 
-export interface FileLister {
-  getFilesInDirectory(path: string): Promise<string[]>
-}
-
 export function createFileLister(): FileLister {
-  return new FileListerImpl();
+  return new FileLister();
 }
 
 /**
- * Includes a spurious field and constructor to demonstrate that this does not impact tests.
+ * Includes a spurious field and constructor to demonstrate how this impacts tests.
  */
-class FileListerImpl implements FileLister {
+export class FileLister {
 
   private readonly foo: string = 'bar';
 
