@@ -58,14 +58,15 @@ Some observations:
 ## Factory injection
 
 This is an approach to creating the "main" function which allows any given dependency to be swapped out.
-The `replaceFactories` function to swap out any of the various factory methods used in the project, allowing clients to control how the project is configured.
-This ability to use different dependencies in different circumstances is essential for testing, but it can also be used for production - e.g. using feature flags, or supporting a data store migration.
+We export the `main` function and a `productionFactories` const.
+Tests can call the `productionFactories.replaceFactories` function to swap out any of the various dependencies used in the project.
+This ability could also be used for production - e.g. based on feature flags.
 
-There is a class-based version and a function-based version, demonstrating how the technique could work with either approach to DI. 
+There is an interface-based version and a function-based version, demonstrating how the technique could work with either approach to DI. 
 
 Injecting factory functions rather than instances has a couple of benefits.
-Firstly, the factory is in control of how instance(s) that get created, supporting patterns like singletons and instance pools.
-Secondly, it provides a very robust mechanism for allowing us to swap out any components we want, without needing to re-implement the wiring each time.
+Firstly, it provides a very robust mechanism for allowing us to swap out any components we want, without needing to re-implement the wiring each time.
+Secondly, the factory is in control of how instance(s) that get created, supporting patterns like singletons and instance pools.
 
 
 [dependency-composition]: https://martinfowler.com/articles/dependency-composition.html
